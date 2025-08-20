@@ -12,9 +12,9 @@ async def get_or_update_token():
     :return: Токен для доступа к GigaChat API.
     :rtype: str
     """
-    token = await get_value()
-    if token:
-        return token
-    token = await get_token(config.AUTH_KEY)
-    await set_value(token)
-    return token
+    giga_token = await get_value()
+    if giga_token:
+        return giga_token
+    giga_token = await get_token(config.AUTH_KEY)
+    await set_value(giga_token)
+    return giga_token
