@@ -66,7 +66,6 @@ async def send_answer(message: Message, state: FSMContext):
         response = await communication(giga_token, message.text)
     except Exception as e:
         await message.answer(f"Произошла ошибка: {e}")
-        print(f"Произошла ошибка: {e}")
     else:
         await message.answer(response)
     finally:
